@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Epstein Stalker - DataSet watcher and downloader (justice.gov)",
+  "version": "1.1.1",
+  "description": "Follows USJD default filenaming schema and downloads the last Epstein filesit directly, even before indexed on their own site.",
+  "permissions": [
+    "alarms",
+    "downloads",
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.justice.gov/*"
+  ],
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "action": {
+    "default_title": "Epstein Stalker",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
+}

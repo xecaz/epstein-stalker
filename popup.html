@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 12px; width: 320px; }
+      .row { margin: 8px 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+      input[type="number"] { width: 120px; }
+      button { width: 100%; padding: 8px; margin-top: 10px; }
+      small { color: #555; display: block; margin-top: 10px; line-height: 1.25; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 12px; }
+      .divider { margin: 10px 0; border-top: 1px solid #ddd; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <label for="enabled">Enabled</label>
+      <input id="enabled" type="checkbox" />
+    </div>
+
+    <div class="row">
+      <label for="nextIndex">Data Set #</label>
+      <input id="nextIndex" type="number" min="1" step="1" />
+    </div>
+
+    <div class="row">
+      <label for="intervalMinutes">Check every (min)</label>
+      <input id="intervalMinutes" type="number" min="1" step="1" />
+    </div>
+
+    <button id="save">Save settings</button>
+    <button id="checkNow">Check now</button>
+
+    <div class="divider"></div>
+
+    <div class="row">
+      <span>Last found</span>
+      <span id="lastFound">—</span>
+    </div>
+
+    <div class="row">
+      <span>Last checked</span>
+      <span id="lastChecked">—</span>
+    </div>
+
+    <div class="row">
+      <span>Current status</span>
+      <span id="lastStatus">—</span>
+    </div>
+
+    <div class="row">
+      <span>URL</span>
+      <span id="lastUrl" class="mono" style="max-width: 210px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">—</span>
+    </div>
+
+    <small>
+      Downloads go to Chrome’s default Downloads location (see <span class="mono">chrome://settings/downloads</span>).
+    </small>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
